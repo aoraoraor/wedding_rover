@@ -1,0 +1,7 @@
+enable_testing()
+find_package(GTest)
+if (GTEST_FOUND)
+    include_directories(${GTEST_INCLUDE_DIRS})
+    add_executable(pathplannertest pathplannertest.cpp)
+    target_link_libraries(pathplannertest pathplanner pthread ${GTEST_BOTH_LIBRARIES})
+endif(GTEST_FOUND)
